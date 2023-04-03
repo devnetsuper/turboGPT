@@ -1,0 +1,25 @@
+{
+  "name": "turbogpt",
+  "version": "1.0.0",
+  "description": "GPT-like chatGPT for your terminal",
+  "main": "index.js",
+  "bin": {
+    "turbogpt": "bin/context.js"
+  },
+  "scripts": {
+    "test": "jest --ci --coverage --verbose"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/normaescobar/turboGPT.git"
+  },
+  "keywords": [
+    "[]"
+  ],
+  "author": "latinaxpro madamepresident",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/normaescobar/turboGPT/issues"
+  },
+  "homepage": "https://github.com/normaescobar/turboGPT#readme"
+}
