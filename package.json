@@ -2,11 +2,13 @@
   "name": "turbogpt",
   "version": "1.0.0",
   "description": "GPT-like chatGPT for your terminal",
+  "type": "module",
   "main": "index.js",
   "bin": {
     "turbogpt": "bin/context.js"
   },
   "scripts": {
+    "start": "node bin/index.js",
     "test": "jest --ci --coverage --verbose"
   },
   "repository": {
@@ -21,5 +23,13 @@
   "bugs": {
     "url": "https://github.com/normaescobar/turboGPT/issues"
   },
-  "homepage": "https://github.com/normaescobar/turboGPT#readme"
+  "homepage": "https://github.com/normaescobar/turboGPT#readme",
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "clipboardy": "^2.3.0",
+    "commander": "^10.0.0",
+    "openai": "^3.2.1",
+    "ora": "^6.3.0",
+    "prompts": "^2.4.2"
+  }
 }

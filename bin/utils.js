@@ -53,6 +53,7 @@ const checkBlockOfCode = async (text, prompt) => {
 
 const generateResponse = async (apiKey, prompt, text) => {
   try {
+    console.log(apiKey)
     const request = await generateCompletion(apiKey, text);
 
     if (request == undefined || !request?.content) {

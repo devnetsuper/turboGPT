@@ -1,9 +1,10 @@
 import { Configuration, OpenAIApi } from "openai";
 import pkg from 'chalk';
 const { red } = pkg;
-import { loadWithRocketGradient } from "./gradient.js";
+//import { loadWithRocketGradient } from "./gradient.js";
 import { addContext } from "./context.js";
 import { getContext } from "./context.js";
+import ora from "ora";
 
 
 const generateCompletion = async (apiKey, prompt) => {
@@ -14,17 +15,20 @@ const generateCompletion = async (apiKey, prompt) => {
     });
 
     const openai = new OpenAIApi(configuration);
-    const spinner = loadWithRocketGradient("Thinking...").start();
+    const spinner = ora("Thinking...").start();
     
-    addContext({"role": "user", "content": prompt});
+    addContext({"role": "user", "content": prompt.value});
     addContext({"role": "system", "content": "Read the context, when returning the answer ,always wrapping block of code exactly within triple backticks"});
 
+    const messages = getContext();
+    console.log("Conversation history:", messages);
+    
     const request = await openai.createChatCompletion({
-      model:"gpt-3.5-turbo",
-      messages:getContext(),
+      model: "gpt-3.5-turbo",
+      messages: getContext(),
     })
       .then((res) => {
-        addContext(res.data.choices[0].message);
+        console.log("Messages sent to API:", getContext());
         spinner.stop();
         return res.data.choices[0].message;
       })

@@ -15,7 +15,7 @@ const gradientColors = [
   `#c238bd`,
 ];
 
-const rocketAscii = "■■▶";
+//const rocketAscii = "■■▶";
 
 // get a reference to scroll through while loading
 // visual representation of what this generates:
@@ -69,7 +69,8 @@ function getIntroAnimFrames() {
  * @param text display text next to rocket
  * @returns Ora spinner for running .stop()
  */
-const loadWithRocketGradient = (text) => {
+
+/*const loadWithRocketGradient = (text) => {
   const spinner = ora({
     spinner: {
       interval: 80,
@@ -78,7 +79,7 @@ const loadWithRocketGradient = (text) => {
     text: `${rocketAscii} ${text}`,
   });
 
-  return spinner;
-};
+  return spinner;*/
 
-export { loadWithRocketGradient, rocketAscii, getGradientAnimFrames};
+
+export { getGradientAnimFrames };
